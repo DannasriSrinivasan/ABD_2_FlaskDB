@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>ADB Assignment 02</title>
+    <meta charset="utf-8"/>
+    <style>
+      form {text-align: center;}
+      table, td, th {
+            border:2px solid black;
+            border-collapse: collapse;
+            width: 25%;
+            text-align: center;
+            margin-left: auto; 
+            margin-right: auto;
+            font-weight: bold;
+            font-size: medium;
+            font-variant: petite-caps;
+            color: darkred;
+          }
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        color: purple;
+      }
+      h3 {
+        font-variant: petite-caps;
+        color: darkred;
+        font-size: x-large;
+      }
+      
+      input{
+        border-radius: 10px;
+        padding: 13px;
+        color: darkred;
+        font-weight: bold;
+        font-size: large;
+      }
+      </style>
+  </head>
+  <body style="background-color: beige;"> 
+    <form action= "/finddateTimeNet" method = "POST"> 
+      <h2> Name: Dannasri Srinivasan </h2>
+      <h2> ID: 1001698730 </h2>
+      <h2> Assignment 02 </h2>
+      <h3>Date: </h3><input type="date" name="date">
+      <h3>Time Start Range: </h3><input type="time" name="timestart">
+      <h3>Time End Range: </h3><input type="time" name="timeend">
+      <input type="submit" value = "Search"/>
+   
+      </form>
+
+      {%if countRows!=0%}
+      <h2> Total Count: {{countRows}}</h2> 
+      <table> 
+         <tr>
+            <th>Net</th>
+            <th>Count of Net</th>
+         </tr>
+         {% for va in values %}
+         <tr>
+            <td>{{va[0]}}</td>
+            <td>{{va[1]}}</td>
+         </tr>
+         {% endfor %}
+      </table>
+      {% else %}
+      <h2>No Data Available</h2>
+{%endif%} 
+  </body>
+</html>

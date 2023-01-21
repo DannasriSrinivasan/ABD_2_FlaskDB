@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>ADB Assignment 02</title>
+    <meta charset="utf-8"/>
+    <style>
+      form {text-align: center;}
+      
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        color: purple;
+      }
+      h3 {
+        font-variant: petite-caps;
+        color: darkred;
+        font-size: x-large;
+      }
+      
+      input{
+        border-radius: 10px;
+        padding: 13px;
+        color: darkred;
+        font-weight: bold;
+        font-size: large;
+      }
+      </style>
+  </head>
+  <body style="background-color: beige;"> 
+    <form action= "/findlatlonkm" method = "POST"> 
+      <h2> Name: Dannasri Srinivasan </h2>
+      <h2> ID: 1001698730 </h2>
+      <h2> Assignment 02 </h2>
+      <label>
+        <h3>Select One: </h3><select name="lsa" id="lsa"> 
+          <option value="largest" name="largest">Largest</option>
+          <option value="smallest" name="smallest">Smallest</option>
+          <option value="all" name="all">All</option>
+        </select><br/>
+        <h3>Latitude: </h3><input type="number" name="latitude" value="32.729641" step="any">
+        <h3>Longitude: </h3><input type="number" name="longitude" value="-97.110566" step="any">
+        <h3>Kilometers: </h3><input type="number" name="km" step="any">
+      </label>
+      <input type="submit" value = "Submit"/>
+   
+      </form>
+  </body>
+</html>

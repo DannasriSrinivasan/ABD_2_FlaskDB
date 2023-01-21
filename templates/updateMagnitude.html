@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>ADB Assignment 01</title>
+    <meta charset="utf-8"/>
+    <style>
+      form {text-align: center;}
+      
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        color: purple;
+      }
+      h3 {
+        font-variant: petite-caps;
+        color: darkred;
+        font-size: x-large;
+      }
+      
+      input{
+        border-radius: 10px;
+        padding: 13px;
+        color: darkred;
+        font-weight: bold;
+        font-size: large;
+      }
+      </style>
+  </head>
+  <body style="background-color: beige;"> 
+    <form action= "/updMag" method = "POST"> 
+     
+      <label>
+        <h3>Existing Net: </h3> <input type="text" name = "net"/>
+        <h3>Magnitude Start Range: </h3><input type="number" name="magstart" step="any">
+        <h3>Magnitude End Range: </h3><input type="number" name="magend" step="any">
+        <h3>New Mag Val: </h3> <input type="number" name="magnew" step="any">
+      </label>
+      <input type="submit" value = "Update"/>
+   
+      </form>
+    
+  </body>
+</html>

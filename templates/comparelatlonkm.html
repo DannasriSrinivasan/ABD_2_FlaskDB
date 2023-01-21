@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>ADB Assignment 02</title>
+    <meta charset="utf-8"/>
+    <style>
+      form {text-align: center;}
+      
+      p {
+        font-size: 20px;
+        font-weight: bold;
+        color: purple;
+      }
+      h3 {
+        font-variant: petite-caps;
+        color: darkred;
+        font-size: x-large;
+      }
+      
+      input{
+        border-radius: 10px;
+        padding: 13px;
+        color: darkred;
+        font-weight: bold;
+        font-size: large;
+      }
+      </style>
+  </head>
+  <body style="background-color: beige;"> 
+    <form action= "/findComparelatlonkm" method = "POST"> 
+      <h2> Name: Dannasri Srinivasan </h2>
+      <h2> ID: 1001698730 </h2>
+      <h2> Assignment 02 </h2>
+      <label>
+        <h2>Compare Quakes occured in two places </h2>
+        <h2>Place 1 Details </h2>
+        <h3>Place 1: </h3><input type="text" name="place1">
+        <h3>Latitude: </h3><input type="text" name="latitude1" value="32.729641" >
+        <h3>Longitude: </h3><input type="text" name="longitude1" value="-97.110566" >
+        <h3>Kilometers: </h3><input type="number" name="km1" step="any">
+        <h2>Place 2 Details </h2>
+        <h3>Place 2: </h3><input type="text" name="place2">
+        <h3>Latitude: </h3><input type="text" name="latitude2" value="32.729641" >
+        <h3>Longitude: </h3><input type="text" name="longitude2" value="-97.110566" >
+        <h3>Kilometers: </h3><input type="number" name="km2" step="any">
+      </label>
+      <input type="submit" value = "Submit"/>
+   
+      </form>
+
+      {%if countRows1!=0%}
+      <h2> Total Count occured in place1: {{p1}}: {{countRows1}}</h2> 
+      <table> 
+         <tr>
+            <th>Time</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>depth</th>
+            <th>Magnitude</th>
+            <th>MagType</th>
+            <th>nst</th>
+            <th>gap</th>
+            <th>dmin</th>
+            <th>rms</th>
+            <th>net</th>
+            <th>id</th>
+            <th>updated</th>
+            <th>place</th>
+            <th>type</th>
+            <th>horError</th>
+            <th>depthError</th>
+            <th>magError</th>
+            <th>magNst</th>
+            <th>status</th>
+            <th>locationSource</th>
+            <th>magSource</th>
+         </tr>
+         {% for va in values1 %}
+         <tr>
+            <td>{{va[0]}}</td>
+            <td>{{va[1]}}</td>
+            <td>{{va[2]}}</td>
+            <td>{{va[3]}}</td>
+            <td>{{va[4]}}</td> 
+            <td>{{va[5]}}</td>
+            <td>{{va[6]}}</td>
+            <td>{{va[7]}}</td>
+            <td>{{va[8]}}</td>
+            <td>{{va[9]}}</td> 
+            <td>{{va[10]}}</td>
+            <td>{{va[11]}}</td>
+            <td>{{va[12]}}</td>
+            <td>{{va[13]}}</td>
+            <td>{{va[14]}}</td> 
+            <td>{{va[15]}}</td>
+            <td>{{va[16]}}</td>
+            <td>{{va[17]}}</td>
+            <td>{{va[18]}}</td>
+            <td>{{va[19]}}</td> 
+            <td>{{va[20]}}</td>
+            <td>{{va[21]}}</td>
+            <td>{{va[22]}}</td>
+         </tr>
+         {% endfor %}
+      </table>
+      {% else %}
+      <h2>No Data</h2>
+      {%endif%} 
+
+      {%if countRows2!=0%}
+      <h2> Total Count occured in place2: {{p2}}: {{countRows2}}</h2> 
+      <table> 
+         <tr>
+            <th>Time</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>depth</th>
+            <th>Magnitude</th>
+            <th>MagType</th>
+            <th>nst</th>
+            <th>gap</th>
+            <th>dmin</th>
+            <th>rms</th>
+            <th>net</th>
+            <th>id</th>
+            <th>updated</th>
+            <th>place</th>
+            <th>type</th>
+            <th>horError</th>
+            <th>depthError</th>
+            <th>magError</th>
+            <th>magNst</th>
+            <th>status</th>
+            <th>locationSource</th>
+            <th>magSource</th>
+         </tr>
+         {% for va in values2 %}
+         <tr>
+            <td>{{va[0]}}</td>
+            <td>{{va[1]}}</td>
+            <td>{{va[2]}}</td>
+            <td>{{va[3]}}</td>
+            <td>{{va[4]}}</td> 
+            <td>{{va[5]}}</td>
+            <td>{{va[6]}}</td>
+            <td>{{va[7]}}</td>
+            <td>{{va[8]}}</td>
+            <td>{{va[9]}}</td> 
+            <td>{{va[10]}}</td>
+            <td>{{va[11]}}</td>
+            <td>{{va[12]}}</td>
+            <td>{{va[13]}}</td>
+            <td>{{va[14]}}</td> 
+            <td>{{va[15]}}</td>
+            <td>{{va[16]}}</td>
+            <td>{{va[17]}}</td>
+            <td>{{va[18]}}</td>
+            <td>{{va[19]}}</td> 
+            <td>{{va[20]}}</td>
+            <td>{{va[21]}}</td>
+            <td>{{va[22]}}</td>
+         </tr>
+         {% endfor %}
+      </table>
+      {% else %}
+      <h2>No Data</h2>
+      {%endif%} 
+  </body>
+</html>
